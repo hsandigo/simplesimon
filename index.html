@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Simon</title>
+    <link rel="stylesheet" href="simplesimon.css">
+
+</head>
+<body>
+<div id="allBoxes">
+    <div class="top">
+        <div id="boxOne" class="box">
+        </div>
+        <div id="boxTwo" class="box">
+        </div>
+    </div>
+    <div class="container">
+        <div id="boxThree" class="box">
+        </div>
+        <div id="boxFour" class="box">
+        </div>
+    </div>
+</div>
+
+<button id="startButton">Start New Game</button>
+
+<h4>Repeat the sequence you just saw.</h4>
+<h3>Current Round: </h3>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous">
+</script>
+<script>
+    "use strict";
+//    $("#allBoxes").click(function(addEventListener, click){
+//        console.log("you clicked on a box")
+//    });
+//    var boxOne = function () {
+//        alert('You clicked the button!');
+//
+//    boxOne.getElementById('box-one').addEventListener('click');
+//        console.log("yes")
+//    };
+
+    function newRound() {
+        var sequence = [1,2,1]; //red, green, red
+        animate(sequence);
+    }
+
+    function animate(sequence) {
+        var i = 0;
+        var interval = setInterval(function() {
+            lightUp(sequence[i]);
+
+            i++;
+            if (i >= sequence.length) {
+                clearInterval(interval);
+            }
+        }, 600);
+    }
+
+
+    function lightup(tile) {
+        var $tile = $('[data-tile=' + tile + ']').addClass('lit');
+        window.setTimeout(function() {
+            $tile.removeClass('lit');
+        }, 300);
+
+    }
+
+
+</script>
+</body>
+</html>
