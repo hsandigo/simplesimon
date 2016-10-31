@@ -1,28 +1,65 @@
+body{
+    margin-left: 35%;
+    margin-top: 7%;
+    font-family: "American Typewriter";
+    /*background: black;*/
+    /*color: white;*/
+}
 .box{
-    height: 150px;
-    width: 100px;
+    height: 250px;
+    width: 200px;
     padding-right: 5%;
     margin-right: 1%;
     margin-bottom: 1%;
+    border: ridge;
+    border-color: black;
+}
+.top:hover{
+    color: orangered;
+}
+#button{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    border: 1px solid #000;
+    float: left;
+    font-family: "American Typewriter";
+    background-color: ivory;
+}
+.box:active{
+    opacity: .5;
 }
 .top{
     display: flex;
 }
 #boxOne{
-    background-color: darkblue;
-}
-#boxTwo{
-    background-color: indianred;
+    /*background-color: orange;*/
+    background-image: url("pumpkin.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.container{
+#boxTwo{
+    /*background-color: forestgreen;*/
+    background-image: url("skeleton.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+.bottom{
     display: flex;
 }
 #boxThree{
-    background-color: yellow;
+    /*background-color: darkblue;*/
+    background-image: url("witch.png");
+    background-repeat: no-repeat;
+
     float: left;
 }
 #boxFour{
-    background-color: forestgreen;
+    /*background-color: yellow;*/
+    background-image: url("ghost.png");
+    background-size: contain;
+    background-repeat: no-repeat;
     float: left;
 }

@@ -4,25 +4,36 @@
     <meta charset="UTF-8">
     <title>Simple Simon</title>
     <link rel="stylesheet" href="simplesimon.css">
-
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">-->
 </head>
 <body>
+<h2>HALLOWEEN SIMPLE SIMON</h2>
 <div id="allBoxes">
     <div class="top">
         <div id="boxOne" class="box">
+            <!--<img src="ghost.png">-->
         </div>
         <div id="boxTwo" class="box">
+            <!--<img src="pumpkin.png"-->
         </div>
     </div>
-    <div class="container">
+    <div class="bottom">
         <div id="boxThree" class="box">
+            <!--<img src="skeleton.jpg">-->
         </div>
         <div id="boxFour" class="box">
+            <!--<img src="witch.png">-->
         </div>
     </div>
 </div>
 
-<button id="startButton">Start New Game</button>
+<!--<button id="startButton">Start New Game</button>-->
+
+<form>
+    <!--<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">New</i></a>-->
+    <input type="button" onClick="history.go(0)" id="button" value="Start New Game">
+</form>
+
 
 <h4>Repeat the sequence you just saw.</h4>
 <h3>Current Round: </h3>
@@ -32,43 +43,20 @@
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous">
 </script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>-->
+
 <script>
     "use strict";
-//    $("#allBoxes").click(function(addEventListener, click){
-//        console.log("you clicked on a box")
-//    });
-//    var boxOne = function () {
-//        alert('You clicked the button!');
-//
+    $("#allBoxes").click(function (addEventListener, click) {
+        console.log("you clicked on a box")
+    });
+    var boxOne = function () {
+        alert('You clicked the button!');
+
 //    boxOne.getElementById('box-one').addEventListener('click');
 //        console.log("yes")
-//    };
-
-    function newRound() {
-        var sequence = [1,2,1]; //red, green, red
-        animate(sequence);
-    }
-
-    function animate(sequence) {
-        var i = 0;
-        var interval = setInterval(function() {
-            lightUp(sequence[i]);
-
-            i++;
-            if (i >= sequence.length) {
-                clearInterval(interval);
-            }
-        }, 600);
-    }
-
-
-    function lightup(tile) {
-        var $tile = $('[data-tile=' + tile + ']').addClass('lit');
-        window.setTimeout(function() {
-            $tile.removeClass('lit');
-        }, 300);
-
-    }
+    };
+    $(top).hover(inFunction,outFunction)
 
 
 </script>
