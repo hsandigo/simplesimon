@@ -1,60 +1,214 @@
-body{
-    margin-left: 30%;
-    margin-top: 2%;
-    font-family: "American Typewriter";
-    background: rgba(102, 102, 102, 0.47);
-    /*color: white;*/
+/*@import "compass/css3";*/
+html{
+    font-family: "Times New Roman", serif;
 }
-.box{
-    height: 250px;
+h2{
+
+}
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+.flex-item {
+    /*background: tomato;*/
+    padding: 5px;
     width: 200px;
-    padding-right: 5%;
-    margin-right: 1%;
-    margin-bottom: 1%;
-    border: ridge;
-    border-color: black;
-    background-color: white;
+    height: 150%;
+    margin-top: 10%;
+
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
 }
-#button{
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
-    border: 1px solid #000;
-    float: left;
-    font-family: "American Typewriter";
-    background-color: orange;
+#box1{
+    background-color: indigo;
 }
-.box:active{
+#box1:active{
     opacity: .5;
 }
-.top{
-    display: flex;
+#box2{
+    background-color: steelblue;
 }
-#boxOne{
+#box2:active{
+    opacity: .5;
+}
+#box3{
+    background-color: mediumvioletred;
+}
+#box3:active{
+    opacity: .5;
+}
+#box4{
+    background-color: darkblue;
+}
+#box4:active{
+    opacity: .5;
+}
+.buttons{
+    display: inline;
+    /*padding: 3%;*/
+    width: 200px;
+    height: 150%;
+    align-content: center;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    font-family: "Times New Roman", serif;
+    text-align: center;
+}
+.button {
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+.button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+
+/*I like this, but I like the effect the buttons have now*/
+/*#buttons{*/
+/*background-color: white;*/
+/*border: 4px solid #4CAF50; !* Green *!*/
+/*color: white;*/
+/*padding: 15px 32px;*/
+/*text-align: center;*/
+/*text-decoration: none;*/
+/*display: inline-block;*/
+/*font-size: 16px;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*a:visited{color: white}*/
+/*a:hover{color:yellow}*/
+/*a:active{color:lightseagreen}*/
+
+/*body{*/
+    /*margin-left: 30%;*/
+    /*margin-top: 2%;*/
+    /*font-family: "American Typewriter";*/
+    /*background: rgba(102, 102, 102, 0.47);*/
+    /*!*color: white;*!*/
+/*}*/
+/*.box{*/
+    /*height: 250px;*/
+    /*width: 200px;*/
+    /*padding-right: 5%;*/
+    /*margin-right: 1%;*/
+    /*margin-bottom: 1%;*/
+    /*border: ridge;*/
+    /*border-color: black;*/
+    /*background-color: white;*/
+/*}*/
+/*#button{*/
+    /*height: 100px;*/
+    /*width: 100px;*/
+    /*border-radius: 100px;*/
+    /*border: 1px solid #000;*/
+    /*float: left;*/
+    /*font-family: "American Typewriter";*/
     /*background-color: orange;*/
-    background-image: url("pumpkin.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-#boxTwo{
-    /*background-color: forestgreen;*/
-    background-image: url("skeleton.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.bottom{
-    display: flex;
-}
-#boxThree{
-    /*background-color: darkblue;*/
-    background-image: url("witch.png");
-    background-repeat: no-repeat;
-    float: left;
-}
-#boxFour{
-    /*background-color: yellow;*/
-    background-image: url("ghost.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    float: left;
-}
+/*}*/
+/*.box:active{*/
+    /*opacity: .5;*/
+/*}*/
+/*.top{*/
+    /*display: flex;*/
+/*}*/
+/*#boxOne{*/
+    /*!*background-color: orange;*!*/
+    /*background-image: url("pumpkin.png");*/
+    /*background-size: contain;*/
+    /*background-repeat: no-repeat;*/
+/*}*/
+/*#boxTwo{*/
+    /*!*background-color: forestgreen;*!*/
+    /*background-image: url("skeleton.jpg");*/
+    /*background-size: contain;*/
+    /*background-repeat: no-repeat;*/
+/*}*/
+/*.bottom{*/
+    /*display: flex;*/
+/*}*/
+/*#boxThree{*/
+    /*!*background-color: darkblue;*!*/
+    /*background-image: url("witch.png");*/
+    /*background-repeat: no-repeat;*/
+    /*float: left;*/
+/*}*/
+/*#boxFour{*/
+    /*!*background-color: yellow;*!*/
+    /*background-image: url("ghost.png");*/
+    /*background-size: contain;*/
+    /*background-repeat: no-repeat;*/
+    /*float: left;*/
+/*}*/

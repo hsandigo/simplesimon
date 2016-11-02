@@ -2,39 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name=“viewport” content =“width=device-width, initial-scale=1.0”>
     <title>Simple Simon</title>
     <link rel="stylesheet" href="simplesimon.css">
 </head>
 <body>
-<h2>HALLOWEEN SIMPLE SIMON</h2>
-<div id="allBoxes">
-    <div class="top">
-        <div id="boxOne" class="box">
-            <!--<img src="ghost.png">-->
-        </div>
-        <div id="boxTwo" class="box">
-            <!--<img src="pumpkin.png"-->
-        </div>
+<!--<h2>Not So Simple Simon</h2>-->
+<div id="boxes">
+    <ul class="flex-container">
+        <li class="flex-item" id="box1">1</li>
+        <li class="flex-item" id="box2">2</li>
+        <li class="flex-item" id="box3">3</li>
+        <li class="flex-item" id="box4">4</li>
+    </ul>
+</div>
+
+<div class="buttons">
+    <div>
+        <button class= "button">Start</button>
     </div>
-    <div class="bottom">
-        <div id="boxThree" class="box">
-            <!--<img src="skeleton.jpg">-->
-        </div>
-        <div id="boxFour" class="box">
-            <!--<img src="witch.png">-->
-        </div>
+    <div>
+        <button  class="button" id="reset-game">New game</button>
     </div>
 </div>
 
-<!--<button id="startButton">Start New Game</button>-->
-<nav>
-    <button id="start-game">Start</button>
-    <div class="label-element-group">
-        <label for="rounds-display">Round: </label>
-        <div class="display" id="rounds-display"></div>
-    </div>
-    <button id="reset-game">New game</button>
-</nav>
 
 <!--<form>-->
     <!--<input type="button" onClick="history.go(0)" id="startButton" value="Start New Game">-->
@@ -49,57 +40,87 @@
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous">
 </script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>-->
 
 <script>
     "use strict";
-//    $("#allBoxes").click(function (addEventListener, click) {
-//        console.log("you clicked on a box")
-//    });
+    $("#boxes").click(function (addEventListener, click) {
+        console.log("you clicked on a box")
+    });
+
+    var random = Math.floor((Math.random()*4)+1);
+    for (var i = 1; i >= 4; i++) {
+
+        console.log('Loop counter is: ' + i);
+    }
+
+//    var boxOne = document.getElementById("boxOne");
+//    var boxTwo = document.getElementById("boxTwo");
+//    var boxThree = document.getElementById("boxThree");
+//    var boxFour = document.getElementById("boxFour");
+//
+//    boxOne.addEventListener("click", boxOneClicked);
+//    boxTwo.addEventListener("click", boxTwoClicked);
+//    boxThree.addEventListener("click", boxThreeClicked);
+//    boxFour.addEventListener("click", boxFourClicked);
 
 //    var sequence = ["#boxOne", "#boxTwo", "#boxThree", "#boxFour","#boxOne"];
 //    var human = [];
 //    var i = 0;
+//
+//    SimonSays.prototype.setUpRound = function() {
+//        var limit = moves();
+//
+//        order.length = 0;
+//        // Update GUI-counter.
+//        incrementDisplay();
+//
+//        // Put random numbers into an array. =>
+//        for (var i = 0; i < limit; i++) {
+//            order.push(Math.floor(Math.random() * 4));
+//        }
+//
+//        var boxes = [boxOne, boxTwo, boxThree, boxFour];
 
-    function SimonSays( timeLapse,
-                        elements,
-                        cssClass,
-                        messageBoard,
-                        display,
-                        breakTime,
-                        board) {
-        var order = [];
+//    function SimonSays( timeLapse,
+//                        elements,
+//                        cssClass,
+//                        messageBoard,
+//                        display,
+//                        breakTime,
+//                        board) {
+//        var order = [];
+//
+//        if (!Array.isArray(elements)) {
+//            // Change nodeList into an real array.
+//            elements = Array.prototype.slice.apply(elements);
+//        }
+//
+//        // Every round the count
+//        //  of the moves is incremented.
+//        var moves = (function() {
+//            var moves = 1;
+//
+//            return function() {
+//                return moves++;
+//            }
+//        })();
+//
+//        var getRounds = (function() {
+//            var rounds = 1;
+//
+//            return function() {
+//                return rounds++;
+//            }
+//        })()
+//    }
 
-        if (!Array.isArray(elements)) {
-            // Change nodeList into an real array.
-            elements = Array.prototype.slice.apply(elements);
-        }
 
-        // Every round the count
-        //  of the moves is incremented.
-        var moves = (function() {
-            var moves = 1;
-
-            return function() {
-                return moves++;
-            }
-        })();
-
-        var getRounds = (function() {
-            var rounds = 1;
-
-            return function() {
-                return rounds++;
-            }
-        })()
-    }
 
 
 //    var random = Math.floor((Math.random()*4)+1);
 //    for (var i = 1; i >= 4; i++) {
 //
 //        console.log('Loop counter is: ' + i);
-
 
 //    var boxOne = document.getElementById("boxOne");
 //    var boxTwo = document.getElementById("boxTwo");
@@ -139,23 +160,11 @@
 ////        }
 //    }
 //
-//    boxOne.addEventListener("click", boxOneClicked);
-//    boxTwo.addEventListener("click", boxTwoClicked);
-//    boxThree.addEventListener("click", boxThreeClicked);
-//    boxFour.addEventListener("click", boxFourClicked);
 
 
-    //    var boxOne = function () {
+//    var boxOne = function () {
 //        alert('You clicked the button!');
 //    };
-
-//from what i’m imagining start with making the button clickable. then generate a random number between 1 & 4 and have that represent one of the buttons in an array
-//        something like
-//        var buttons = [green , blue, red, yellow]
-//
-//                [12:00]
-//        and that random number function we always use
-
 </script>
 </body>
 </html>
