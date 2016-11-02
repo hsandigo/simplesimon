@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Simple Simon</title>
     <link rel="stylesheet" href="simplesimon.css">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">-->
 </head>
 <body>
 <h2>HALLOWEEN SIMPLE SIMON</h2>
@@ -28,15 +27,22 @@
 </div>
 
 <!--<button id="startButton">Start New Game</button>-->
+<nav>
+    <button id="start-game">Start</button>
+    <div class="label-element-group">
+        <label for="rounds-display">Round: </label>
+        <div class="display" id="rounds-display"></div>
+    </div>
+    <button id="reset-game">New game</button>
+</nav>
 
-<form>
-    <!--<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">New</i></a>-->
-    <input type="button" onClick="history.go(0)" id="button" value="Start New Game">
-</form>
+<!--<form>-->
+    <!--<input type="button" onClick="history.go(0)" id="startButton" value="Start New Game">-->
+<!--</form>-->
 
 
-<h4>Repeat the sequence you just saw.</h4>
-<h3>Current Round: </h3>
+<!--<h4>Repeat the sequence you just saw.</h4>-->
+<!--<h3>Current Round: </h3>-->
 
 <script
         src="https://code.jquery.com/jquery-2.2.4.js"
@@ -47,17 +53,108 @@
 
 <script>
     "use strict";
-    $("#allBoxes").click(function (addEventListener, click) {
-        console.log("you clicked on a box")
-    });
-    var boxOne = function () {
-        alert('You clicked the button!');
+//    $("#allBoxes").click(function (addEventListener, click) {
+//        console.log("you clicked on a box")
+//    });
 
-//    boxOne.getElementById('box-one').addEventListener('click');
-//        console.log("yes")
-    };
-    $(top).hover(inFunction,outFunction)
+//    var sequence = ["#boxOne", "#boxTwo", "#boxThree", "#boxFour","#boxOne"];
+//    var human = [];
+//    var i = 0;
 
+    function SimonSays( timeLapse,
+                        elements,
+                        cssClass,
+                        messageBoard,
+                        display,
+                        breakTime,
+                        board) {
+        var order = [];
+
+        if (!Array.isArray(elements)) {
+            // Change nodeList into an real array.
+            elements = Array.prototype.slice.apply(elements);
+        }
+
+        // Every round the count
+        //  of the moves is incremented.
+        var moves = (function() {
+            var moves = 1;
+
+            return function() {
+                return moves++;
+            }
+        })();
+
+        var getRounds = (function() {
+            var rounds = 1;
+
+            return function() {
+                return rounds++;
+            }
+        })()
+    }
+
+
+//    var random = Math.floor((Math.random()*4)+1);
+//    for (var i = 1; i >= 4; i++) {
+//
+//        console.log('Loop counter is: ' + i);
+
+
+//    var boxOne = document.getElementById("boxOne");
+//    var boxTwo = document.getElementById("boxTwo");
+//    var boxThree = document.getElementById("boxThree");
+//    var boxFour = document.getElementById("boxFour");
+//
+//    function boxOneClicked () {
+////        event.preventDefault();
+////        if (middleBox.value == ""){
+////            document.getElementById("left").value += "5";
+////        }else{
+////            document.getElementById("right").value += "5";
+////        }
+//    }
+//    function boxTwoClicked () {
+////        event.preventDefault();
+////        if (middleBox.value == ""){
+////            document.getElementById("left").value += "5";
+////        }else{
+////            document.getElementById("right").value += "5";
+////        }
+//    }
+//    function boxThreeClicked () {
+////        event.preventDefault();
+////        if (middleBox.value == ""){
+////            document.getElementById("left").value += "5";
+////        }else{
+////            document.getElementById("right").value += "5";
+////        }
+//    }
+//    function boxFourClicked () {
+////        event.preventDefault();
+////        if (middleBox.value == ""){
+////            document.getElementById("left").value += "5";
+////        }else{
+////            document.getElementById("right").value += "5";
+////        }
+//    }
+//
+//    boxOne.addEventListener("click", boxOneClicked);
+//    boxTwo.addEventListener("click", boxTwoClicked);
+//    boxThree.addEventListener("click", boxThreeClicked);
+//    boxFour.addEventListener("click", boxFourClicked);
+
+
+    //    var boxOne = function () {
+//        alert('You clicked the button!');
+//    };
+
+//from what i’m imagining start with making the button clickable. then generate a random number between 1 & 4 and have that represent one of the buttons in an array
+//        something like
+//        var buttons = [green , blue, red, yellow]
+//
+//                [12:00]
+//        and that random number function we always use
 
 </script>
 </body>

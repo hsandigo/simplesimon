@@ -1,8 +1,8 @@
 body{
-    margin-left: 35%;
-    margin-top: 7%;
+    margin-left: 30%;
+    margin-top: 2%;
     font-family: "American Typewriter";
-    /*background: black;*/
+    background: rgba(102, 102, 102, 0.47);
     /*color: white;*/
 }
 .box{
@@ -13,9 +13,7 @@ body{
     margin-bottom: 1%;
     border: ridge;
     border-color: black;
-}
-.top:hover{
-    color: orangered;
+    background-color: white;
 }
 #button{
     height: 100px;
@@ -24,7 +22,7 @@ body{
     border: 1px solid #000;
     float: left;
     font-family: "American Typewriter";
-    background-color: ivory;
+    background-color: orange;
 }
 .box:active{
     opacity: .5;
@@ -38,13 +36,11 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
 }
-
 #boxTwo{
     /*background-color: forestgreen;*/
     background-image: url("skeleton.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-
 }
 .bottom{
     display: flex;
@@ -53,7 +49,6 @@ body{
     /*background-color: darkblue;*/
     background-image: url("witch.png");
     background-repeat: no-repeat;
-
     float: left;
 }
 #boxFour{
