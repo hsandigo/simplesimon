@@ -16,7 +16,6 @@
         <li class="flex-item" id="box4">4</li>
     </ul>
 </div>
-
 <div class="buttons">
     <div>
         <button class= "button">Start</button>
@@ -26,145 +25,11 @@
     </div>
 </div>
 
-
-<!--<form>-->
-    <!--<input type="button" onClick="history.go(0)" id="startButton" value="Start New Game">-->
-<!--</form>-->
-
-
-<!--<h4>Repeat the sequence you just saw.</h4>-->
-<!--<h3>Current Round: </h3>-->
-
 <script
-        src="https://code.jquery.com/jquery-2.2.4.js"
-        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-        crossorigin="anonymous">
+src="https://code.jquery.com/jquery-2.2.4.js"
+integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+crossorigin="anonymous">
 </script>
-
-<script>
-    "use strict";
-    $("#boxes").click(function (addEventListener, click) {
-        console.log("you clicked on a box")
-    });
-
-    var random = Math.floor((Math.random()*4)+1);
-    for (var i = 1; i >= 4; i++) {
-
-        console.log('Loop counter is: ' + i);
-    }
-
-//    var boxOne = document.getElementById("boxOne");
-//    var boxTwo = document.getElementById("boxTwo");
-//    var boxThree = document.getElementById("boxThree");
-//    var boxFour = document.getElementById("boxFour");
-//
-//    boxOne.addEventListener("click", boxOneClicked);
-//    boxTwo.addEventListener("click", boxTwoClicked);
-//    boxThree.addEventListener("click", boxThreeClicked);
-//    boxFour.addEventListener("click", boxFourClicked);
-
-//    var sequence = ["#boxOne", "#boxTwo", "#boxThree", "#boxFour","#boxOne"];
-//    var human = [];
-//    var i = 0;
-//
-//    SimonSays.prototype.setUpRound = function() {
-//        var limit = moves();
-//
-//        order.length = 0;
-//        // Update GUI-counter.
-//        incrementDisplay();
-//
-//        // Put random numbers into an array. =>
-//        for (var i = 0; i < limit; i++) {
-//            order.push(Math.floor(Math.random() * 4));
-//        }
-//
-//        var boxes = [boxOne, boxTwo, boxThree, boxFour];
-
-//    function SimonSays( timeLapse,
-//                        elements,
-//                        cssClass,
-//                        messageBoard,
-//                        display,
-//                        breakTime,
-//                        board) {
-//        var order = [];
-//
-//        if (!Array.isArray(elements)) {
-//            // Change nodeList into an real array.
-//            elements = Array.prototype.slice.apply(elements);
-//        }
-//
-//        // Every round the count
-//        //  of the moves is incremented.
-//        var moves = (function() {
-//            var moves = 1;
-//
-//            return function() {
-//                return moves++;
-//            }
-//        })();
-//
-//        var getRounds = (function() {
-//            var rounds = 1;
-//
-//            return function() {
-//                return rounds++;
-//            }
-//        })()
-//    }
-
-
-
-
-//    var random = Math.floor((Math.random()*4)+1);
-//    for (var i = 1; i >= 4; i++) {
-//
-//        console.log('Loop counter is: ' + i);
-
-//    var boxOne = document.getElementById("boxOne");
-//    var boxTwo = document.getElementById("boxTwo");
-//    var boxThree = document.getElementById("boxThree");
-//    var boxFour = document.getElementById("boxFour");
-//
-//    function boxOneClicked () {
-////        event.preventDefault();
-////        if (middleBox.value == ""){
-////            document.getElementById("left").value += "5";
-////        }else{
-////            document.getElementById("right").value += "5";
-////        }
-//    }
-//    function boxTwoClicked () {
-////        event.preventDefault();
-////        if (middleBox.value == ""){
-////            document.getElementById("left").value += "5";
-////        }else{
-////            document.getElementById("right").value += "5";
-////        }
-//    }
-//    function boxThreeClicked () {
-////        event.preventDefault();
-////        if (middleBox.value == ""){
-////            document.getElementById("left").value += "5";
-////        }else{
-////            document.getElementById("right").value += "5";
-////        }
-//    }
-//    function boxFourClicked () {
-////        event.preventDefault();
-////        if (middleBox.value == ""){
-////            document.getElementById("left").value += "5";
-////        }else{
-////            document.getElementById("right").value += "5";
-////        }
-//    }
-//
-
-
-//    var boxOne = function () {
-//        alert('You clicked the button!');
-//    };
-</script>
+<script src="simplesimon.js"></script>
 </body>
 </html>
