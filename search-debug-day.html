@@ -85,7 +85,7 @@
         tbody.html(buildTableRows(friends));
     };
     tbody.html(buildTableRows(friends));
-    search.on('click', filterFriendsByName(friends, $('#friend').val())); //these are the first two lines you should check first
+    search.on('click', filterFriendsByName); //these are the first two lines you should check first
     sortName.on('click', sortTable);
 
     //only functions can be listeners -- you're trying to pass an array as a listener, but it won't work
