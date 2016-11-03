@@ -1,7 +1,16 @@
 /*@import "compass/css3";*/
 html{
     font-family: "Times New Roman", serif;
+    background-color: rgba(192, 199, 216, 0.35);
     /*background-color: #C0C7D8;*/
+}
+h2{
+    text-align: center;
+    font-size: 6em;
+    color: rgba(250, 100, 93, 0.73);
+    letter-spacing: 5px;
+    word-spacing: 45px;
+    margin: 4%;
 }
 .flex-container {
     padding: 0;
@@ -22,7 +31,8 @@ html{
     padding: 5px;
     width: 200px;
     height: 150%;
-    margin-top: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 
     line-height: 150px;
     color: white;
@@ -34,12 +44,11 @@ html{
     background-color: #E7F4E1;
 }
 #box1:active{
-    opacity: .5;
+    opacity: .3;
 }
 #box2{
     /*background-color: #41E181;*/
     background-color: #91FABB;
-
 }
 #box2:active{
     opacity: .5;
@@ -53,7 +62,7 @@ html{
     opacity: .5;
 }
 #box4{
-    background-color: #D1FCE2;
+    background-color: #C6EFD7;
 }
 #box4:active{
     opacity: .5;
@@ -122,25 +131,6 @@ html{
 /*display: inline-block;*/
 /*font-size: 16px;*/
 /*}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
