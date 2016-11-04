@@ -16,7 +16,7 @@
     <div class="text-right">
         <form class="form-inline">
             <div class="form-group">
-                <input type="text" class="form-control" id="friend" placeholder="Jane">
+                <input type="text" class="form-control" id="friend" placeholder="name">
             </div>
             <button type="button" id="search" class="btn btn-default">Search</button>
         </form>
@@ -85,7 +85,26 @@
         tbody.html(buildTableRows(friends));
     };
     tbody.html(buildTableRows(friends));
-    search.on('click', filterFriendsByName); //these are the first two lines you should check first
+    search.on('click', function(){ //these are the first two lines you should check first
+        //filtering
+        var searchedFriends = filterFriendsByName(friends, $('#friend').val());
+        //building some table rows
+        var tableRows = buildTableRows(searchedFriends);
+        //update the document (table rows)
+        tbody.html(tableRows)
+    });
+   var searchFriends = function(event){
+        event.preventDefault();
+        //filtering
+        var searchedFriends = filterFriendsByName(friends, $('#friend').val());
+        //building some table rows
+        var tableRows = buildTableRows(searchedFriends);
+        //update the document (table rows)
+        tbody.html(tableRows)
+    };
+    tbody.html(buildTableRows(friends));
+    search.on('click', searchFriends);
+    $("form").on("submit", searchFriends);
     sortName.on('click', sortTable);
 
     //only functions can be listeners -- you're trying to pass an array as a listener, but it won't work

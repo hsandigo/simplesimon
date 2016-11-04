@@ -1,6 +1,7 @@
 "use strict";
 var settings = {
-    sequence: [],
+    sequence: [], //array containing the generated/randomized pads
+    plaSequence: [], //array containing the users pad selections
     round: 0,
     playNumber: 0,
     speed: 1000,
@@ -9,95 +10,89 @@ var settings = {
 
 //START and END GAME
 
-$(document).ready(function () {
-$("#box1, #box2, #box3, #box4").on("click", function () {
-    animate(this.id)
-});
-$("#startGame").on("click", function () {
-    $("#startGame").hide();
-    // $("#simon, #count").css("filter", "blur(0px)");
-    // $("#simon, #count").css("-webkit-filter", "blur(0px)");
-    settings.round++;
-    makeId(); // make id and play it
-});
+// $(document).ready(function () {
 
-$("#resetGame").on("click", function () {
-    $("#resetGame").hide();
-    settings.sequence = [];
-    settings.round = 0;
-    settings.playNumber = 0;
-        settings.speed = 1000;
-    settings.clicked = 0;
-    $("#startGame").trigger("click");
-});
+    $("#box1, #box2, #box3, #box4").on("click", function () {
+        animate(this.id)
+    });
+    $("#startGame").on("click", function () {
+        $("#startGame").hide();
+        settings.round++;
+        makeId(); // make id and play it
+    });
 
     function animate(liid) {
-
         // Increase round speed.
         if (settings.round > 5) {
             settings.speed = 500
         }
         if (liid == "box1") {
-            $("#box1").css("border-color", "#C6E2A7");//new
+            $("#box1").css("background-color", "#C6E2A7");//new
             setTimeout(function () {
-                $("#box1").css("border-color", "#E7F4E1");//original
+                $("#box1").css("background-color", "#E7F4E1");//original
             }, 200);
         } else if (liid == "box2") {
-            $("#box2").css("border-color", "#67EF8B");//new
+            $("#box2").css("background-color", "#67EF8B");//new
             setTimeout(function () {
-                $("#box2").css("border-color", "#91FABB");//orig
+                $("#box2").css("background-color", "#91FABB");//orig
             }, 200);
         } else if (liid == "box3") {
-            $("#box3").css("border-color", "#31A545");//new
+            $("#box3").css("background-color", "#31A545");//new
             setTimeout(function () {
-                $("#box3").css("border-color", "#41E181");//orig
+                $("#box3").css("background-color", "#41E181");//orig
             }, 200);
         } else if (liid == "box4") {
-            $("#box4").css("border-color", "#A6DBAB");
+            $("#box4").css("background-color", "#A6DBAB");//new
             setTimeout(function () {
-                $("#box4").css("border-color", "#C6EFD7");//orig
+                $("#box4").css("background-color", "#C6EFD7");//orig
             }, 200);
         }
     }
 
     function makeId() {
-        var text = "";
-        var possible = "box1box2box3box4";
-
-        // var random = Math.floor((Math.random() * 4) + 1);
-        // for (var i = 1; i >= 4; i++) {
-        //     console.log('Loop counter is: ' + i);
-        // }
-         for (var i = 1; i >= 4; i++) {
-             text += possible.charAt(Math.floor(Math.random() * possible.length));
-             settings.sequence.push(text);
-        }
-        function myLoop() {
-            setTimeout(function () {
-                animate(settings.sequence[settings.playNumber]);
-                settings.playNumber++;
-                if (settings.playNumber < settings.sequence.length) {
-                    myLoop();
-                } else {
-                    settings.playNumber = 0;
-                    listen();
-                }
-            }, settings.speed)
-        }
+        var score = "";
+        var possible = ["box1", "box2", "box3", "box4"];
+        var random = Math.floor((Math.random() * 4));
+        var simonChoice = possible[random];
+        settings.sequence.push(simonChoice);
 
         myLoop();
     }
 
+    function myLoop() {
+        setTimeout(function () {
+            console.log(settings.sequence.length);
+            animate(settings.sequence[settings.playNumber]);
+            settings.playNumber++;
+            if (settings.playNumber < settings.sequence.length) {
+                myLoop();
+            } else {
+                settings.playNumber = 0;
+                listen();
+            }
+        }, settings.speed)
+    }
+
+    $("#resetGame").on("click", function () {
+        $("#resetGame").hide();
+        settings.sequence = [];
+        settings.round = 0;
+        settings.playNumber = 0;
+        settings.speed = 1000;
+        settings.clicked = 0;
+        $("#startGame").trigger("click");
+    });
+
     // LISTEN
     function listen() {
-
-        $("#box1, #box2, #box3, #box4").on("mouseDown", function () {
+        $("#box1, #box2, #box3, #box4").on("click", function () {
             if (this.id === settings.sequence[settings.clicked]) {
-
+                console.log(settings.clicked === settings.sequence.length - 1);
                 if (settings.clicked === settings.sequence.length - 1) {
-                    $("#box1, #box2, #box3, #box4").off("mouseDown");
+                    $("#box1, #box2, #box3, #box4").off("click");
                     settings.clicked = 0;
-                    $("#startGame").trigger("click");
+                    makeId();
+                    // $("#startGame").trigger("click");
                 } else {
                     console.log("Right!");
                     settings.clicked++;
@@ -105,28 +100,45 @@ $("#resetGame").on("click", function () {
             } else {
                 console.log("WRONG");
                 $("#resetGame").show();
-                $("#resetGame").addClass("bigEntrance");
-                // settings.clicked = 0;
-                $("#box1, #box2, #box3, #box4").off("mouseDown");
+                $("#box1, #box2, #box3, #box4").off("click");
             }
         });
     }
-
-    // count- effects ---slides down from footer?
-    $('#count-toggle').click(function() {
+    // count-effects --- slides down from footer, which means it slides up from the footer?
+    $('#count-toggle').click(function () {
         $('#count').slideDown();
     });
 
-});
+// });
 
-//math.random sequence
+
+
+//possible array
+
+// var sequence = ["#boxOne", "#boxTwo", "#boxThree", "#boxFour","#boxOne"];
+// var human = [];
+// var i = 0;
+//
+// function startGame() {
+//     order.length = 0;
+//     // Update GUI-counter.
+//     incrementDisplay();
+//
+//     // Put random numbers into an array. =>
+//     for (var i = 0; i <= 4; i++) {
+//         order.push(Math.floor(Math.random() * 4) + 1);
+//     }
+//     var boxes = ["boxOne, boxTwo, boxThree, boxFour"];
+// };
 
 
 //possible ternary operator for messages once the game ends
-//po
+
+//
 //var message = (success) ? "Next Round!" : "Game Over!";
 
 //possible animation for boxes once the game works
+
 //     // $("#boxes").click(function (addEventListener, click) {
 //     //     console.log("you clicked on a box")
 //     // });
@@ -178,6 +190,7 @@ $("#resetGame").on("click", function () {
 // startGame.addEventListener("click", startGame);
 
 //old way of trying to make this work with vars and event listeners
+
 //    var boxOne = document.getElementById("boxOne");
 //    var boxTwo = document.getElementById("boxTwo");
 //    var boxThree = document.getElementById("boxThree");
@@ -187,56 +200,3 @@ $("#resetGame").on("click", function () {
 //    boxTwo.addEventListener("click", boxTwoClicked);
 //    boxThree.addEventListener("click", boxThreeClicked);
 //    boxFour.addEventListener("click", boxFourClicked);
-
-//didn't know what some of the code in here so I didn't use it
-//    var sequence = ["#boxOne", "#boxTwo", "#boxThree", "#boxFour","#boxOne"];
-//    var human = [];
-//    var i = 0;
-//
-//    SimonSays.prototype.setUpRound = function() {
-//        var limit = moves();
-//
-//        order.length = 0;
-//        // Update GUI-counter.
-//        incrementDisplay();
-//
-//        // Put random numbers into an array. =>
-//        for (var i = 0; i < limit; i++) {
-//            order.push(Math.floor(Math.random() * 4));
-//        }
-//
-//        var boxes = [boxOne, boxTwo, boxThree, boxFour];
-
-//possible way of starting the game
-//    function SimonSays( timeLapse,
-//                        elements,
-//                        cssClass,
-//                        messageBoard,
-//                        display,
-//                        breakTime,
-//                        board) {
-//        var order = [];
-//
-//        if (!Array.isArray(elements)) {
-//            // Change nodeList into an real array.
-//            elements = Array.prototype.slice.apply(elements);
-//        }
-//
-//        // Every round the count
-//        //  of the moves is incremented.
-//        var moves = (function() {
-//            var moves = 1;
-//
-//            return function() {
-//                return moves++;
-//            }
-//        })();
-//
-//        var getRounds = (function() {
-//            var rounds = 1;
-//
-//            return function() {
-//                return rounds++;
-//            }
-//        })()
-//    }

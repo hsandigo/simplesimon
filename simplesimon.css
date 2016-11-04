@@ -40,6 +40,7 @@ h2{
     font-size: 3em;
     text-align: center;
 }
+
 #box1{
     background-color: #E7F4E1;
 }
@@ -47,16 +48,13 @@ h2{
     opacity: .3;
 }
 #box2{
-    /*background-color: #41E181;*/
     background-color: #91FABB;
 }
 #box2:active{
     opacity: .5;
 }
 #box3{
-    /*background-color: #91FABB;*/
     background-color: #41E181;
-
 }
 #box3:active{
     opacity: .5;
@@ -81,6 +79,10 @@ h2{
     /*display: none;*/
     /*float: right;*/
 /*}*/
+
+#resetGame{
+    display: none;
+}
 .buttons{
     display: inline;
     /*padding: 3%;*/
