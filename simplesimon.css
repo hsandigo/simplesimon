@@ -70,18 +70,17 @@ h2{
 #count{
     font-size: 7em;
     color: white;
-    margin-top: 7%;
-    display: inline-flex;
-    float: left;
-}
-#gameOver{
-    font-size: 5em;
-    color: white;
-    margin-top: 5%;
-    display: inline-flex;
+    /*margin-top: 7%;*/
     display: none;
-    float: right;
 }
+/*#gameOver{*/
+    /*font-size: 5em;*/
+    /*color: white;*/
+    /*margin-top: 5%;*/
+    /*display: inline-flex;*/
+    /*display: none;*/
+    /*float: right;*/
+/*}*/
 .buttons{
     display: inline;
     /*padding: 3%;*/
