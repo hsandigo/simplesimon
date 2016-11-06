@@ -1,10 +1,10 @@
-/*@import "compass/css3";*/
-html{
+html {
     font-family: "Times New Roman", serif;
     background-color: rgba(176, 183, 200, 0.35);
     /*background-color: #C0C7D8;*/
 }
-h2{
+
+h2 {
     text-align: center;
     font-size: 6em;
     color: rgba(250, 100, 93, 0.73);
@@ -12,6 +12,7 @@ h2{
     word-spacing: 45px;
     margin: 4%;
 }
+
 .flex-container {
     padding: 0;
     margin: 0;
@@ -26,6 +27,7 @@ h2{
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
 }
+
 .flex-item {
     /*background: tomato;*/
     padding: 5px;
@@ -41,49 +43,59 @@ h2{
     text-align: center;
 }
 
-#box1{
+#box1 {
     background-color: #E7F4E1;
 }
-#box1:active{
+
+#box1:active {
     opacity: .3;
 }
-#box2{
+
+#box2 {
     background-color: #91FABB;
 }
-#box2:active{
+
+#box2:active {
     opacity: .5;
 }
-#box3{
+
+#box3 {
     background-color: #41E181;
 }
-#box3:active{
+
+#box3:active {
     opacity: .5;
 }
-#box4{
+
+#box4 {
     background-color: #C6EFD7;
 }
-#box4:active{
+
+#box4:active {
     opacity: .5;
 }
-#count{
+
+#count {
     font-size: 7em;
     color: white;
-    /*margin-top: 7%;*/
+    text-align: center;
     display: none;
 }
+
 /*#gameOver{*/
-    /*font-size: 5em;*/
-    /*color: white;*/
-    /*margin-top: 5%;*/
-    /*display: inline-flex;*/
-    /*display: none;*/
-    /*float: right;*/
+/*font-size: 5em;*/
+/*color: white;*/
+/*margin-top: 5%;*/
+/*display: inline-flex;*/
+/*display: none;*/
+/*float: right;*/
 /*}*/
 
-#resetGame{
+#resetGame {
     display: none;
 }
-.buttons{
+
+.buttons {
     display: inline;
     /*padding: 3%;*/
     width: 200px;
@@ -96,6 +108,7 @@ h2{
     font-family: "Times New Roman", serif;
     text-align: center;
 }
+
 .button {
     position: relative;
     /*background-color: #4CAF50;*/
@@ -113,6 +126,7 @@ h2{
     cursor: pointer;
     font-family: "Times New Roman", serif;
 }
+
 .button:after {
     content: "";
     /*background: #f1f1f1;*/
@@ -126,33 +140,10 @@ h2{
     opacity: 0;
     transition: all 0.8s
 }
+
 .button:active:after {
     padding: 0;
     margin: 0;
     opacity: 1;
     transition: 0s
 }
-
-
-
-
-/*I may use this if I can figure out how to correctly use it*/
-/*#boxes {*/
-    /*filter: blur(5px); !* Doesn't work anywhere yet *!*/
-    /*-webkit-filter: blur(5px);*/
-/*}*/
-/*#start:hover {*/
-    /*cursor:pointer;*/
-/*}*/
-
-/*I like this, but I like the effect the buttons have now*/
-/*#buttons{*/
-/*background-color: white;*/
-/*border: 4px solid #4CAF50; !* Green *!*/
-/*color: white;*/
-/*padding: 15px 32px;*/
-/*text-align: center;*/
-/*text-decoration: none;*/
-/*display: inline-block;*/
-/*font-size: 16px;*/
-/*}*/
