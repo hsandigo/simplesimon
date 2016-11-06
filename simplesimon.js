@@ -8,7 +8,7 @@ var settings = {
     clicked: 0
 };
 
-//START and END GAME
+//function to start game
 $("#box1, #box2, #box3, #box4").on("click", function () {
     animate(this.id)
 });
@@ -20,10 +20,11 @@ $("#startGame").on("click", function () {
     makeId(); // make id and play it
 });
 
+//animates the boxes while game is being played
 function animate(liid) {
-    // Increase round speed.
-    if (settings.round > 5) {
-        settings.speed = 300
+    // Increases round speed after round 7
+    if (settings.round > 7) {
+        settings.speed = 200
     }
     if (liid == "box1") {
         $("#box1").css("background-color", "#C6E2A7");//new
@@ -48,6 +49,7 @@ function animate(liid) {
     }
 }
 
+//generates random sequence of box possibilities
 function makeId() {
     var score = "";
     var possible = ["box1", "box2", "box3", "box4"];
@@ -57,14 +59,15 @@ function makeId() {
 
     myLoop();
 }
-// count-effects --- slides down from footer, which means it slides up from the footer?
+// keeps track of each round being played
 function updateCount() {
-    var count = $("#count").html();
+    var count = $("#count").text();
     count++;
-    $("#count").html(count);
+    $("#count").text(count);
 
 }
 
+//
 function myLoop() {
     setTimeout(function () {
         console.log(settings.sequence.length);
@@ -81,6 +84,7 @@ function myLoop() {
     updateCount().reset();
 }
 
+//function that clears the settings for new games
 $("#resetGame").on("click", function () {
     $("#resetGame").hide();
     settings.sequence = [];
@@ -93,7 +97,7 @@ $("#resetGame").on("click", function () {
     updateCount();
 });
 
-// LISTEN
+//compares the user sequence with simon's sequence
 function listen() {
     $("#box1, #box2, #box3, #box4").on("click", function () {
         if (this.id === settings.sequence[settings.clicked]) {
@@ -102,7 +106,6 @@ function listen() {
                 $("#box1, #box2, #box3, #box4").off("click");
                 settings.clicked = 0;
                 makeId();
-                // $("#startGame").trigger("click");
             } else {
                 console.log("Right!");
                 settings.clicked++;
@@ -114,6 +117,8 @@ function listen() {
         }
     });
 }
+
+//disables user clicks while simon is playing
 function disableUserInput() {
     $("div").off('click');
 }
