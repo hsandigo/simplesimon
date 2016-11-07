@@ -51,7 +51,7 @@ function animate(liid) {
 
 //generates random sequence of box possibilities
 function makeId() {
-    var score = "";
+    // var score = "";
     var possible = ["box1", "box2", "box3", "box4"];
     var random = Math.floor((Math.random() * 4));
     var simonChoice = possible[random];
@@ -64,13 +64,11 @@ function updateCount() {
     var count = $("#count").text();
     count++;
     $("#count").text(count);
-
 }
 
 //
 function myLoop() {
     setTimeout(function () {
-        console.log(settings.sequence.length);
         animate(settings.sequence[settings.playNumber]);
         settings.playNumber++;
         if (settings.playNumber < settings.sequence.length) {
@@ -81,7 +79,7 @@ function myLoop() {
         }
     }, settings.speed);
 
-    updateCount().reset();
+    updateCount().reset(); //is this valid js at all?
 }
 
 //function that clears the settings for new games
@@ -101,17 +99,14 @@ $("#resetGame").on("click", function () {
 function listen() {
     $("#box1, #box2, #box3, #box4").on("click", function () {
         if (this.id === settings.sequence[settings.clicked]) {
-            console.log(settings.clicked === settings.sequence.length - 1);
             if (settings.clicked === settings.sequence.length - 1) {
                 $("#box1, #box2, #box3, #box4").off("click");
                 settings.clicked = 0;
                 makeId();
             } else {
-                console.log("Right!");
                 settings.clicked++;
             }
         } else {
-            console.log("WRONG");
             $("#resetGame").show();
             $("#box1, #box2, #box3, #box4").off("click");
         }
